@@ -13,4 +13,11 @@ Cara pemilihan adalah dengan memilih nomor calon kepala desa. Setiap warga akan 
 
 Program kita mengelola multi linked-list yang memodelkan relasi calon kepala desa dengan warga desa. Satu calon kepala desa mungkin dipilih lebih dari satu warga desa, dan seorang warga desa hanya bisa memilih satu calon kepala desa. Daftar multi linked-list dijelaskan di bawah ini:
 
-![Frame 2](https://user-images.githubusercontent.com/35615666/146533019-ba1793c7-94cf-4964-be13-fade7c162a25.jpg)
+![Frame 2 (1)](https://user-images.githubusercontent.com/35615666/146569338-65f5ccdc-d671-4154-a068-92580273a97c.jpg)
+
+
+
+## Contact
+
+alifbabrizq@gmail.com
+aryyawijaya@gmail.com
