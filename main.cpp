@@ -9,5 +9,7 @@ int main() {
     cout<<"dsds";
 
     cout << "cek" << endl;
+    cout<<"tetetetetetetet"<<endl;
+
     return 0;
 }
