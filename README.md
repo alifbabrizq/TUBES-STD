@@ -1,6 +1,6 @@
 <h1 align = "center">TUBES-STD</h1>
-Tugas Besar mata kuliah Struktur Data menggunakan [C++](https://isocpp.org/)
-
+<p align = "center">Tugas Besar mata kuliah Struktur Data menggunakan <a  href="https://isocpp.org/">C++</a></p>
+<br>
 
 ## Program Pemilihan Kepala Desa Tangkas
 Di desa Tangkas akan diadakan pemilihan kepala desa baru. Setiap warga desa Tangkas berhak memilih calon kepala desa dengan syarat:
