@@ -7,5 +7,7 @@ int main() {
 
     cout<<"ihiuyyy"<<endl;
     cout<<"dsds";
+
+    cout << "cek" << endl;
     return 0;
 }
