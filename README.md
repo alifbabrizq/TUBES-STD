@@ -1,4 +1,4 @@
-# TUBES-STD
+<h1 align = "center">TUBES-STD</h1>
 Tugas Besar mata kuliah Struktur Data menggunakan [C++](https://isocpp.org/)
 
 
