@@ -1,6 +1,4 @@
-#include <iostream>
-
-using namespace std;
+#include "warga.h"
 
 int main() {
     cout << "mantapu jiwa" << endl;
