@@ -1,4 +1,10 @@
 # depslib dependency file v1.0
-1639654822 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\main.cpp
+1639751020 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\main.cpp
+	"warga.h"
+
+1639753088 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.h
+	"calon.h"
+
+1639751045 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.h
 	<iostream>
 
