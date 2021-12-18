@@ -27,9 +27,10 @@ struct listWarga {
 
 void createListWarga(listWarga &listW);
 void createElmWarga(dataWarga data, adrWarga &W);
-void lastWarga(listWarga listW, adrWarga &W);
+void lastWarga(listWarga listW, adrWarga &last);
 void tambahWarga(listWarga &listW, adrWarga W);
-void deleteFirst(listWarga &listW);
+void deleteFirstWarga(listWarga &listW);
 void hapusWarga(listWarga &listW, string NIK);
+bool cekNikWarga(listWarga listW, string NIK);
 
 #endif // WARGA_H_INCLUDED

@@ -32,7 +32,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+<<<<<<< Updated upstream
 		<Unit filename="calon.cpp" />
+=======
+>>>>>>> Stashed changes
 		<Unit filename="calon.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="warga.cpp" />

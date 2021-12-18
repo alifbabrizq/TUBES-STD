@@ -11,10 +11,10 @@ void createElmWarga(dataWarga data, adrWarga &W) {
     nextWarga(W) = W;
 }
 
-void lastWarga(listWarga listW, adrWarga &W) {
-    W = first(listW);
-    while(nextWarga(W) != first(listW)) {
-        W = nextWarga(W);
+void lastWarga(listWarga listW, adrWarga &last) {
+    last = first(listW);
+    while(nextWarga(last) != first(listW)) {
+        last = nextWarga(last);
     }
 }
 
@@ -30,7 +30,7 @@ void tambahWarga(listWarga &listW, adrWarga W){
     }
 }
 
-void deleteFirst(listWarga &listW) {
+void deleteFirstWarga(listWarga &listW) {
     adrWarga last, P;
 
     P = first(listW);
@@ -57,10 +57,19 @@ void hapusWarga(listWarga &listW, string NIK) {
 
     if(info(P).NIK == NIK) {
         if(P == first(listW)) {
-            deleteFirst(listW);
+            deleteFirstWarga(listW);
         } else {
             nextWarga(Q) = nextWarga(P);
             delete P;
         }
     }
+}
+
+bool cekNikWarga(listWarga listW, string NIK) {
+    adrWarga P = first(listW);
+
+    while(info(P).NIK != NIK) {
+        P = nextWarga(P);
+    }
+    return (info(P).NIK == NIK);
 }
