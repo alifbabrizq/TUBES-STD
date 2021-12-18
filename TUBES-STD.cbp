@@ -32,7 +32,11 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="calon.cpp" />
+		<Unit filename="calon.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="warga.cpp" />
+		<Unit filename="warga.h" />
 		<Extensions>
 			<lib_finder disable_auto="1" />
 		</Extensions>

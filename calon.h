@@ -24,4 +24,10 @@ struct listCalon {
     adrCalon first;
 };
 
+void createListCalon(listCalon &listC);
+void createElmCalon(dataCalon data, adrCalon &C);
+void lastCalon(listCalon listC, adrCalon &last);
+void tambahCalon(listCalon &listC, adrCalon C);
+void hapusCalon(listCalon &listC, string noCalon);
+
 #endif // CALON_H_INCLUDED
