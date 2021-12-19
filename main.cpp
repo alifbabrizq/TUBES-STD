@@ -26,8 +26,12 @@ int main() {
     cout << info(first(listW)).namaWarga << " ";
     cout << info(first(listW)).jenisKelamin << " ";
     cout << info(first(listW)).umur << endl;
-    hapusWarga(listW, "3404011");
-    cout << first(listW) << endl;
+    //hapusWarga(listW, "3404011");
+    cout<<cekNikWarga(listW, "3404011")<<endl;
+    cout<<cekUmurWarga(listW, "3404011")<<endl<<"nama belum milih : ";
+    cetakBelumMilih(listW);
+    cout << endl<<endl;
+    //cout << first(listW) << endl;
 
     // testing calon
     listCalon listC;

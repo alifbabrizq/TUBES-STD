@@ -31,6 +31,9 @@ void lastWarga(listWarga listW, adrWarga &last);
 void tambahWarga(listWarga &listW, adrWarga W);
 void deleteFirstWarga(listWarga &listW);
 void hapusWarga(listWarga &listW, string NIK);
-bool cekNikWarga(listWarga listW, string NIK);
+adrWarga cekNikWarga(listWarga listW, string NIK);
+bool cekUmurWarga(listWarga listW, string NIK);
+void pilihCalon(listWarga &listW, adrWarga &pW, listCalon listC, string NIK, string noCalon);
+void cetakBelumMilih(listWarga listW);
 
 #endif // WARGA_H_INCLUDED

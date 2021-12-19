@@ -45,7 +45,7 @@ void deleteFirstWarga(listWarga &listW) {
 }
 
 void hapusWarga(listWarga &listW, string NIK) {
-    adrWarga P,Q,last;
+    adrWarga P,Q;
 
     P = first(listW);
     Q = nil;
@@ -65,11 +65,55 @@ void hapusWarga(listWarga &listW, string NIK) {
     }
 }
 
-bool cekNikWarga(listWarga listW, string NIK) {
+adrWarga cekNikWarga(listWarga listW, string NIK) {
     adrWarga P = first(listW);
 
-    while(info(P).NIK != NIK) {
+    while(info(P).NIK != NIK && nextWarga(P)!= first(listW)) {
         P = nextWarga(P);
     }
-    return (info(P).NIK == NIK);
+    if(info(P).NIK == NIK) {
+        return P;
+    } else {
+        return nil;
+    }
+}
+
+bool cekUmurWarga(listWarga listW, string NIK) {
+    adrWarga P = cekNikWarga(listW, NIK);
+    return (P != nil && info(P).umur >= 17);
+}
+
+void pilihCalon(listWarga &listW, adrWarga &pW, listCalon listC, string NIK, string noCalon) {
+    pW = cekNikWarga(listW, NIK);
+    adrCalon pC = first(listC);
+
+    if(pW != nil && pilihan(pW) == nil){
+        if(cekUmurWarga(listW, NIK)) {
+            while(info(pC).noCalon != noCalon && nextCalon(pC) != nil) {
+                pC = nextCalon(pC);
+            }
+            if(info(pC).noCalon == noCalon){
+                pilihan(pW) = pC;
+            } else {
+                cout<<"Calon tidak ditemukan";
+            }
+        }
+    }
+}
+
+void cetakBelumMilih(listWarga listW) {
+    adrWarga pW = first(listW);
+    adrCalon pC = pilihan(pW);
+
+    while(nextWarga(pW) != first(listW)) {
+        pC = pilihan(pW);
+        //cout<<pC;
+        if((pC == nil) && (info(pW).umur >= 17)) {
+            cout<<info(pW).namaWarga;
+        }
+        pW = nextWarga(pW);
+    }
+    if((pC == nil) && (info(pW).umur >= 17)) {
+        cout<<info(pW).namaWarga;
+    }
 }

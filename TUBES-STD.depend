@@ -1,11 +1,11 @@
 # depslib dependency file v1.0
-1639823063 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\main.cpp
+1639838791 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\main.cpp
 	"warga.h"
 
-1639823368 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.h
+1639880613 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.h
 	"calon.h"
 
-1639823063 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.h
+1639823903 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.h
 	<iostream>
 
 1639751045 ated upstream
@@ -27,11 +27,11 @@
 
 1639817220 
 
-1639823368 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.cpp
+1639838763 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.cpp
 	"warga.h"
 
 1639753485 shed changes
 
-1639823063 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.cpp
+1639823903 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.cpp
 	"calon.h"
 
