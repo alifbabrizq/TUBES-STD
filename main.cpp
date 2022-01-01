@@ -1,15 +1,8 @@
 #include "warga.h"
 
 int main() {
-    cout << "mantapu jiwa" << endl;
-
-    cout<<"ihiuyyy"<<endl;
-    cout<<"dsds";
-
-    cout << "cek" << endl;
-    cout<<"tetetetetetetet"<<endl;
-
     // testing warga
+    cout << "----- test warga -----" << endl;
     listWarga listW;
     createListWarga(listW);
     cout << first(listW) << endl;
@@ -26,21 +19,21 @@ int main() {
     cout << info(first(listW)).namaWarga << " ";
     cout << info(first(listW)).jenisKelamin << " ";
     cout << info(first(listW)).umur << endl;
-    //hapusWarga(listW, "3404011");
-    cout<<cekNikWarga(listW, "3404011")<<endl;
-    cout<<cekUmurWarga(listW, "3404011")<<endl<<"nama belum milih : ";
-    cetakBelumMilih(listW);
-    cout << endl<<endl;
-    //cout << first(listW) << endl;
+    hapusWarga(listW, "3404011");
+    // cout<<cekNikWarga(listW, "3404011")<<endl;
+    // cout<<cekUmurWarga(listW, "3404011")<<endl<<"nama belum milih : ";
+    // cetakBelumMilih(listW);
+    cout << first(listW) << endl;
 
     // testing calon
+    cout << "----- test calon -----" << endl;
     listCalon listC;
     createListCalon(listC);
     cout << first(listC) << endl;
 
     adrCalon C;
     dataCalon dataC;
-    dataC.noCalon = "01";
+    // dataC.noCalon = "01";
     dataC.namaCalon = "Susilo";
     dataC.visi = "maju terus";
     dataC.misi = "mengayomi";
@@ -50,7 +43,7 @@ int main() {
     cout << info(first(listC)).namaCalon << " ";
     cout << info(first(listC)).visi << " ";
     cout << info(first(listC)).misi << endl;
-    hapusCalon(listC, "01");
+    hapusCalon(listC, 1);
     cout << first(listC) << endl;
 
     return 0;

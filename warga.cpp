@@ -44,18 +44,18 @@ void deleteFirstWarga(listWarga &listW) {
     delete P;
 }
 
-void hapusWarga(listWarga &listW, string NIK) {
+void hapusWarga(listWarga &listW, string noInduk) {
     adrWarga P,Q;
 
     P = first(listW);
     Q = nil;
 
-    while((info(P).NIK != NIK) && (nextWarga(P) != first(listW))) {
+    while((info(P).NIK != noInduk) && (nextWarga(P) != first(listW))) {
         Q = P;
         P = nextWarga(P);
     }
 
-    if(info(P).NIK == NIK) {
+    if(info(P).NIK == noInduk) {
         if(P == first(listW)) {
             deleteFirstWarga(listW);
         } else {
@@ -83,7 +83,7 @@ bool cekUmurWarga(listWarga listW, string NIK) {
     return (P != nil && info(P).umur >= 17);
 }
 
-void pilihCalon(listWarga &listW, adrWarga &pW, listCalon listC, string NIK, string noCalon) {
+void pilihCalon(listWarga &listW, adrWarga &pW, listCalon listC, string NIK, int noCalon) {
     pW = cekNikWarga(listW, NIK);
     adrCalon pC = first(listC);
 
@@ -117,3 +117,16 @@ void cetakBelumMilih(listWarga listW) {
         cout<<info(pW).namaWarga;
     }
 }
+
+void pemilihan(listWarga &listW, adrCalon P, string NIK) {
+    adrWarga W;
+    W = first(listW);
+
+    while (info(W).NIK != NIK && nextWarga(W) != nil) {
+        W = nextWarga(W);
+    }
+    if (info(W).NIK == NIK) {
+        pilihan(W) = P;
+    }
+}
+

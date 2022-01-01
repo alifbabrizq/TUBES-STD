@@ -27,30 +27,28 @@ struct listCalon {
 
 void createListCalon(listCalon &listC);
 /*
-{I.S. -
- F.S. listC adalah list kosong}
+{ I.S. -
+  F.S. listC adalah list kosong }
 */
 void createElmCalon(dataCalon data, adrCalon &C);
 /*
-{I.S. terdefinisi data adalah info
- F.S. C telah dialokasi dan menyimpan data}
+{ I.S. terdefinisi data adalah info
+  F.S. C telah dialokasi dan menyimpan data }
 */
 void tambahCalon(listCalon &listC, adrCalon C);
 /*
-{I.S. listC mungkin kosong, mungkin tidak. C adalah elemen baru yang akan dimasukkan pada listC
- F.S. C adalah elemen pertama dari listC}
+{ I.S. listC mungkin kosong, mungkin tidak. C adalah elemen baru yang akan dimasukkan pada listC
+  F.S. C adalah elemen pertama dari listC }
 */
-void hapusCalon(listCalon &listC, int noCalon);
+void hapusCalon(listCalon &listC, int nomorCalon);
 /*
-{I.S. listC tidak kosong. data terdefinisi noCalon
- F.S. elemen dengan noCalon tertentu akan dihapus}
+{ I.S. listC tidak kosong. terdefinisi nomorCalon
+  F.S. elemen dengan noCalon = nomorCalon telah dihapus }
 */
 adrCalon cariCalon(listCalon listC, string namaCalon);
 /*
-{fungsi akan mengembalikan address dari Calon jika ditemukan.
- Jika tidak maka akan mengembalikan nil}
+{ Mengembalikan address dari calon jika ditemukan namaCalon,
+  sebaliknya akan mengembalikan nil jika tidak ditemukan }
 */
-
-//void lastCalon(listCalon listC, adrCalon &last);
 
 #endif // CALON_H_INCLUDED
