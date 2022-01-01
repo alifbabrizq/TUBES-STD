@@ -28,7 +28,7 @@ void tambahCalon(listCalon &listC, adrCalon C) {
     }
 }
 
-void hapusCalon(listCalon &listC, string noCalon) {
+void hapusCalon(listCalon &listC, int noCalon) {
     adrCalon P, Q;
     P = first(listC);
     Q = nil;

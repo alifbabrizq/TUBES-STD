@@ -10,7 +10,8 @@ using namespace std;
 #define nil NULL
 
 struct dataCalon {
-    string noCalon, namaCalon, visi, misi;
+    int noCalon;
+    string namaCalon, visi, misi;
 };
 
 typedef struct elmCalon *adrCalon;
@@ -25,9 +26,31 @@ struct listCalon {
 };
 
 void createListCalon(listCalon &listC);
+/*
+{I.S. -
+ F.S. listC adalah list kosong}
+*/
 void createElmCalon(dataCalon data, adrCalon &C);
-void lastCalon(listCalon listC, adrCalon &last);
+/*
+{I.S. terdefinisi data adalah info
+ F.S. C telah dialokasi dan menyimpan data}
+*/
 void tambahCalon(listCalon &listC, adrCalon C);
-void hapusCalon(listCalon &listC, string noCalon);
+/*
+{I.S. listC mungkin kosong, mungkin tidak. C adalah elemen baru yang akan dimasukkan pada listC
+ F.S. C adalah elemen pertama dari listC}
+*/
+void hapusCalon(listCalon &listC, int noCalon);
+/*
+{I.S. listC tidak kosong. data terdefinisi noCalon
+ F.S. elemen dengan noCalon tertentu akan dihapus}
+*/
+adrCalon cariCalon(listCalon listC, string namaCalon);
+/*
+{fungsi akan mengembalikan address dari Calon jika ditemukan.
+ Jika tidak maka akan mengembalikan nil}
+*/
+
+//void lastCalon(listCalon listC, adrCalon &last);
 
 #endif // CALON_H_INCLUDED
