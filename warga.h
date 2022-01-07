@@ -1,7 +1,11 @@
 #ifndef WARGA_H_INCLUDED
 #define WARGA_H_INCLUDED
 #include "calon.h"
-
+/*
+Kelompok 7 :
+  1. Alif Babrizq Kuncara (1301204228)
+  2. Aryya Bagus Padmanawijaya (1301204310)
+*/
 #define info(P) (P)->info
 #define nextWarga(P) (P)->nextWarga
 #define pilihan(P) (P)->pilihan
@@ -88,6 +92,6 @@ void deleteFirstWarga(listWarga &listW);
 // bool cekUmurWarga(listWarga listW, string NIK);
 // void pilihCalon(listWarga &listW, adrWarga &pW, listCalon listC, string NIK, int noCalon);
 // void cetakBelumMilih(listWarga listW);
-// void pemilihan(listWarga &listW, adrCalon P, string NIK);
+void pemilihan(listWarga &listW, adrCalon P, string noInduk);
 
 #endif // WARGA_H_INCLUDED

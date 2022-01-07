@@ -65,6 +65,56 @@ void hapusWarga(listWarga &listW, string noInduk) {
     }
 }
 
+void pemlihTermudaTertua(listWarga listW){
+    adrWarga P = first(listW);
+
+    int muda = info(P).umur;
+    int tua = info(P).umur;
+    while(nextWarga(P) != first(listW)) {
+        if(info(nextWarga(P)).umur < muda) {
+            muda = info(nextWarga(P)).umur;
+        } else if(info(nextWarga(P)).umur > tua) {
+            tua = info(nextWarga(P)).umur;
+        }
+        P = nextWarga(P);
+    }
+    if(info(nextWarga(P)).umur < muda) {
+        muda = info(nextWarga(P)).umur;
+    } else if(info(nextWarga(P)).umur > tua) {
+        tua = info(nextWarga(P)).umur;
+    }
+    cout<<"Umur pemilih termuda : "<<muda<<endl;
+    cout<<"Umur pemilih tertua : "<<tua;
+}
+
+adrCalon suaraTerbanyak(listWarga listW, listCalon listC) {
+    adrWarga W;
+    adrCalon C, cWin;
+    int maks, jumlah;
+
+    maks = 0;
+    C = first(listC);
+    while(C != nil){
+        jumlah = 0;
+        W = first(listW);
+        while(nextWarga(W) != first(listW)) {
+            if(pilihan(W) == C) {
+                jumlah++;
+            }
+            W = nextWarga(W);
+        }
+        if(pilihan(W) == C) {
+            jumlah++;
+        }
+        if(jumlah > maks){
+            maks = jumlah;
+            cWin = C;
+        }
+        C = nextCalon(C);
+    }
+    return cWin;
+}
+
 adrWarga cekNikWarga(listWarga listW, string NIK) {
     adrWarga P = first(listW);
 
@@ -118,14 +168,14 @@ void cetakBelumMilih(listWarga listW) {
     }
 }
 
-void pemilihan(listWarga &listW, adrCalon P, string NIK) {
+void pemilihan(listWarga &listW, adrCalon P, string noInduk) {
     adrWarga W;
     W = first(listW);
 
-    while (info(W).NIK != NIK && nextWarga(W) != nil) {
+    while (info(W).NIK != noInduk && nextWarga(W) != first(listW)) {
         W = nextWarga(W);
     }
-    if (info(W).NIK == NIK) {
+    if (info(W).NIK == noInduk) {
         pilihan(W) = P;
     }
 }

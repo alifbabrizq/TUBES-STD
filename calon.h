@@ -3,7 +3,11 @@
 #include <iostream>
 
 using namespace std;
-
+/*
+Kelompok 7 :
+  1. Alif Babrizq Kuncara (1301204228)
+  2. Aryya Bagus Padmanawijaya (1301204310)
+*/
 #define info(P) (P)->info
 #define nextCalon(P) (P)->nextCalon
 #define first(L) ((L).first)
