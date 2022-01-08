@@ -10,22 +10,24 @@
 
 1639751045 ated upstream
 
-1641051234 source:d:\college\semester 3\struktur data\.tubes\tubes-std\main.cpp
+1641529404 source:d:\college\semester 3\struktur data\.tubes\tubes-std\main.cpp
 	"warga.h"
 
 1639753485 shed changes
 	"warga.h"
 
-1641051463 d:\college\semester 3\struktur data\.tubes\tubes-std\warga.h
+1641523503 d:\college\semester 3\struktur data\.tubes\tubes-std\warga.h
 	"calon.h"
 
-1641051487 d:\college\semester 3\struktur data\.tubes\tubes-std\calon.h
+1641608044 d:\college\semester 3\struktur data\.tubes\tubes-std\calon.h
 	<iostream>
+	<fstream>
+	<string>
 
-1641051288 source:d:\college\semester 3\struktur data\.tubes\tubes-std\warga.cpp
+1641525767 source:d:\college\semester 3\struktur data\.tubes\tubes-std\warga.cpp
 	"warga.h"
 
-1641051180 source:d:\college\semester 3\struktur data\.tubes\tubes-std\calon.cpp
+1641524346 source:d:\college\semester 3\struktur data\.tubes\tubes-std\calon.cpp
 	"calon.h"
 
 1639817220 
