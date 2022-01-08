@@ -180,3 +180,63 @@ void pemilihan(listWarga &listW, adrCalon P, string noInduk) {
     }
 }
 
+void hitungGenderPemilihCalon(listWarga listW, listCalon listC, int &jumlahLaki, int &jumlahPerempuan, string namaCalon) {
+    adrCalon C;
+    C = cariCalon(listC, namaCalon);
+    adrWarga W = first(listW);
+    jumlahLaki = 0;
+    jumlahPerempuan = 0;
+    if (W != nil) {
+        while (nextWarga(W) != first(listW)) {
+            if (pilihan(W) == C && info(W).jenisKelamin == 1) {
+                jumlahLaki++;
+            } else if (pilihan(W) == C && info(W).jenisKelamin == 0) {
+                jumlahPerempuan++;
+            }
+            W = nextWarga(W);
+        }
+        if (pilihan(W) == C && info(W).jenisKelamin == 1) {
+            jumlahLaki++;
+        } else if (pilihan(W) == C && info(W).jenisKelamin == 0) {
+            jumlahPerempuan++;
+        }
+    }
+}
+
+void hitungUmurPemilihCalon(listWarga listW, listCalon listC, int &less20, int &over20, string namaCalon) {
+    adrCalon C;
+    C = cariCalon(listC, namaCalon);
+    adrWarga W = first(listW);
+    less20 = 0;
+    over20 = 0;
+    if (W != nil) {
+        while (nextWarga(W) != first(listW)) {
+            if (pilihan(W) == C && info(W).umur <= 20) {
+                less20++;
+            } else if (pilihan(W) == C && info(W).umur > 0) {
+                over20++;
+            }
+            W = nextWarga(W);
+        }
+        if (pilihan(W) == C && info(W).umur <= 20) {
+            less20++;
+        } else if (pilihan(W) == C && info(W).umur > 0) {
+            over20++;
+        }
+    }
+}
+
+void tampilSemuaCalon(listWarga listW, listCalon listC) {
+    adrCalon C;
+    int jumlahLaki, jumlahPerempuan, less20, over20;
+    C = first(listC);
+    while (C != nil) {
+        cout << info(C).namaCalon << " ";
+        hitungGenderPemilihCalon(listW, listC, jumlahLaki, jumlahPerempuan, info(C).namaCalon);
+        cout << jumlahLaki << " " << jumlahPerempuan << "    ";
+        hitungUmurPemilihCalon(listW, listC, less20, over20, info(C).namaCalon);
+        cout << less20 << " " << over20 << endl;
+        C = nextCalon(C);
+    }
+}
+

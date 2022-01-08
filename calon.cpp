@@ -41,3 +41,19 @@ void hapusCalon(listCalon &listC, int nomorCalon) {
         delete P;
     }
 }
+
+adrCalon cariCalon(listCalon listC, string namaCalon) {
+    adrCalon C;
+    C = first(listC);
+    while (nextCalon(C) != nil && info(C).namaCalon != namaCalon) {
+        C = nextCalon(C);
+    }
+    if (info(C).namaCalon == namaCalon) {
+        return C;
+    } else {
+        return nil;
+    }
+}
+
+
+

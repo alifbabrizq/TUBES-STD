@@ -1,6 +1,8 @@
 #ifndef CALON_H_INCLUDED
 #define CALON_H_INCLUDED
 #include <iostream>
+#include <fstream>
+#include <string>
 
 using namespace std;
 /*
