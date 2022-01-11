@@ -57,4 +57,7 @@ adrCalon cariCalon(listCalon listC, string namaCalon);
   sebaliknya akan mengembalikan nil jika tidak ditemukan }
 */
 
+void tampilkanCalon(listCalon listC);
+void templateTampilCalon(adrCalon C);
+
 #endif // CALON_H_INCLUDED

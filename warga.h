@@ -87,11 +87,22 @@ void deleteFirstWarga(listWarga &listW);
 { I.S. listW tidak kosong.
   F.S. elemen pertama dari listW akan dihapus. listW mungkin menjadi kosong }
 */
-
-// adrWarga cekNikWarga(listWarga listW, string NIK);
-// bool cekUmurWarga(listWarga listW, string NIK);
+adrWarga cekNikWarga(listWarga listW, string noInduk);
+/*
+{ Mengembalikan address dari warga jika NIK == noInduk,
+  mengembalikan nil jika noInduk tidak ditemukan }
+*/
+bool cekUmurWarga(listWarga listW, adrWarga W);
+/*
+{ Mengembalikan true jika umur >= 17,
+  mengembalikan false jika < 17 }
+*/
+void pemilihan(listWarga &listW, adrCalon C, adrWarga W);
+/*
+{ I.S. listW tidak kosong, W menyimpan address warga yang melilih, dan C menyimpan addres calon yang dipilih
+  F.S. pilihan W menunjuk C }
+*/
 // void pilihCalon(listWarga &listW, adrWarga &pW, listCalon listC, string NIK, int noCalon);
 // void cetakBelumMilih(listWarga listW);
-void pemilihan(listWarga &listW, adrCalon P, string noInduk);
 
 #endif // WARGA_H_INCLUDED

@@ -1,12 +1,14 @@
 # depslib dependency file v1.0
-1641522785 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\main.cpp
-	"warga.h"
+1641882246 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\main.cpp
+	"menu.h"
 
-1641522219 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.h
+1641880207 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.h
 	"calon.h"
 
-1641091123 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.h
+1641881977 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.h
 	<iostream>
+	<fstream>
+	<string>
 
 1639751045 ated upstream
 
@@ -32,9 +34,15 @@
 
 1639817220 
 
-1641522922 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.cpp
+1641882471 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\warga.cpp
 	"warga.h"
 
-1641087625 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.cpp
+1641882026 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\calon.cpp
 	"calon.h"
+
+1641881156 d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\menu.h
+	"warga.h"
+
+1641880411 source:d:\telyu\semester 3\struktur data [dnh]\c++\tubes-std\menu.cpp
+	"menu.h"
 

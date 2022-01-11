@@ -39,6 +39,9 @@ void hapusCalon(listCalon &listC, int nomorCalon) {
             nextCalon(Q) = nextCalon(P);
         }
         delete P;
+        cout << "Data Calon dengan nomor calon " << nomorCalon << " berhasil dihapus!!" << endl << endl;
+    } else  {
+        cout << "Nomor Calon tidak ditemukan" <<endl<<endl;
     }
 }
 
@@ -55,5 +58,23 @@ adrCalon cariCalon(listCalon listC, string namaCalon) {
     }
 }
 
+void tampilkanCalon(listCalon listC) {
+    adrCalon C = first(listC);
+    cout << "      DAFTAR  CALON      "<<endl;
+    while(C != nil) {
+        templateTampilCalon(C);
+        C = nextCalon(C);
+    }
+}
 
+void templateTampilCalon(adrCalon C) {
+    cout << "+=====================+"<<endl;
+    cout << "|          " << info(C).noCalon << "          |"<<endl;
+    cout << "+=====================+"<<endl;
+    cout << "  nama :  " << info(C).namaCalon <<endl;
+    cout << "  visi :  " << info(C).visi <<endl;
+    cout << "  misi :  " << info(C).misi << endl;
+    cout << "+=====================+"<<endl;
+    cout <<endl;
+}
 
