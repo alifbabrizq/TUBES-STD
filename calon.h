@@ -56,8 +56,11 @@ adrCalon cariCalon(listCalon listC, string namaCalon);
 { Mengembalikan address dari calon jika ditemukan namaCalon,
   sebaliknya akan mengembalikan nil jika tidak ditemukan }
 */
-
-void tampilkanCalon(listCalon listC);
+void tampilSemuaCalon(listCalon listC);
+/*
+{ I.S. listC mungkin kosong,
+  F.S. menampilkan semua calon}
+*/
 void templateTampilCalon(adrCalon C);
 
 #endif // CALON_H_INCLUDED

@@ -1,5 +1,9 @@
 #include "warga.h"
-
+/*
+Kelompok 7 :
+  1. Alif Babrizq Kuncara (1301204228)
+  2. Aryya Bagus Padmanawijaya (1301204310)
+*/
 void createListWarga(listWarga &listW) {
     first(listW) = nil;
 }
@@ -31,9 +35,9 @@ void tambahWarga(listWarga &listW, adrWarga W){
 }
 
 void deleteFirstWarga(listWarga &listW) {
-    adrWarga last, P;
+    adrWarga last, W;
 
-    P = first(listW);
+    W = first(listW);
     if(nextWarga(first(listW)) == first(listW)) {
         first(listW) = nil;
     } else {
@@ -41,26 +45,26 @@ void deleteFirstWarga(listWarga &listW) {
         first(listW) = nextWarga(first(listW));
         nextWarga(last) = first(listW);
     }
-    delete P;
+    delete W;
 }
 
 void hapusWarga(listWarga &listW, string noInduk) {
-    adrWarga P,Q;
+    adrWarga W,prevW;
 
-    P = first(listW);
-    Q = nil;
+    W = first(listW);
+    prevW = nil;
 
-    while((info(P).NIK != noInduk) && (nextWarga(P) != first(listW))) {
-        Q = P;
-        P = nextWarga(P);
+    while((info(W).NIK != noInduk) && (nextWarga(W) != first(listW))) {
+        prevW = W;
+        W = nextWarga(W);
     }
 
-    if(info(P).NIK == noInduk) {
-        if(P == first(listW)) {
+    if(info(W).NIK == noInduk) {
+        if(W == first(listW)) {
             deleteFirstWarga(listW);
         } else {
-            nextWarga(Q) = nextWarga(P);
-            delete P;
+            nextWarga(prevW) = nextWarga(W);
+            delete W;
         }
         cout << "Data Warga dengan NIK " << noInduk << " berhasil dihapus!!" << endl << endl;
     } else {
@@ -71,9 +75,20 @@ void hapusWarga(listWarga &listW, string noInduk) {
 void pemlihTermudaTertua(listWarga listW){
     adrWarga W = first(listW);
 
-    int muda = 100;
-    int tua = 0;
-    while(nextWarga(W) != first(listW)) {
+    if (W != nil) {
+        int muda = 200;
+        int tua = 0;
+        while(nextWarga(W) != first(listW)) {
+            if(info(W).umur >= 17 && pilihan(W) != nil) {
+                if(info(W).umur < muda) {
+                    muda = info(W).umur;
+                }
+                if(info(W).umur > tua) {
+                    tua = info(W).umur;
+                }
+            }
+            W = nextWarga(W);
+        }
         if(info(W).umur >= 17 && pilihan(W) != nil) {
             if(info(W).umur < muda) {
                 muda = info(W).umur;
@@ -82,19 +97,12 @@ void pemlihTermudaTertua(listWarga listW){
                 tua = info(W).umur;
             }
         }
-        W = nextWarga(W);
-    }
-    if(info(W).umur >= 17 && pilihan(W) != nil) {
-        if(info(W).umur < muda) {
-            muda = info(W).umur;
+        if (muda != 200 || tua != 0) {
+            cout << "Umur pemilih termuda : " << muda << endl;
+            cout << "Umur pemilih tertua : " << tua <<endl << endl;
+        } else {
+            cout << "Belum ada warga yang melakukan pemilihan" << endl << endl;
         }
-        if(info(W).umur > tua) {
-            tua = info(W).umur;
-        }
-    }
-    if (muda != 100 || tua != 0) {
-        cout << "Umur pemilih termuda : " << muda << endl;
-        cout << "Umur pemilih tertua : " << tua <<endl << endl;
     } else {
         cout << "Belum ada warga yang melakukan pemilihan" << endl << endl;
     }
@@ -132,11 +140,15 @@ adrCalon suaraTerbanyak(listWarga listW, listCalon listC) {
 adrWarga cekNikWarga(listWarga listW, string noInduk) {
     adrWarga W = first(listW);
 
-    while(nextWarga(W) != first(listW) && info(W).NIK != noInduk) {
-        W = nextWarga(W);
-    }
-    if(info(W).NIK == noInduk) {
-        return W;
+    if (W != nil) {
+        while(nextWarga(W) != first(listW) && info(W).NIK != noInduk) {
+            W = nextWarga(W);
+        }
+        if(info(W).NIK == noInduk) {
+            return W;
+        } else {
+            return nil;
+        }
     } else {
         return nil;
     }
@@ -144,41 +156,6 @@ adrWarga cekNikWarga(listWarga listW, string noInduk) {
 
 bool cekUmurWarga(listWarga listW, adrWarga W) {
     return (W != nil && info(W).umur >= 17);
-}
-/*
-void pilihCalon(listWarga &listW, adrWarga &pW, listCalon listC, string NIK, int noCalon) {
-    pW = cekNikWarga(listW, NIK);
-    adrCalon pC = first(listC);
-
-    if(pW != nil && pilihan(pW) == nil){
-        if(cekUmurWarga(listW, NIK)) {
-            while(info(pC).noCalon != noCalon && nextCalon(pC) != nil) {
-                pC = nextCalon(pC);
-            }
-            if(info(pC).noCalon == noCalon){
-                pilihan(pW) = pC;
-            } else {
-                cout<<"Calon tidak ditemukan";
-            }
-        }
-    }
-}
-*/
-void cetakBelumMilih(listWarga listW) {
-    adrWarga pW = first(listW);
-    adrCalon pC = pilihan(pW);
-
-    while(nextWarga(pW) != first(listW)) {
-        pC = pilihan(pW);
-        //cout<<pC;
-        if((pC == nil) && (info(pW).umur >= 17)) {
-            cout<<info(pW).namaWarga;
-        }
-        pW = nextWarga(pW);
-    }
-    if((pC == nil) && (info(pW).umur >= 17)) {
-        cout<<info(pW).namaWarga;
-    }
 }
 
 void pemilihan(listWarga &listW, adrCalon C, adrWarga W) {
@@ -240,7 +217,7 @@ void hitungUmurPemilihCalon(listWarga listW, listCalon listC, int &less20, int &
     }
 }
 
-void tampilSemuaCalon(listWarga listW, listCalon listC) {
+void tampilSemuaCalonDenganStatistik(listWarga listW, listCalon listC) {
     adrCalon C;
     int jumlahLaki, jumlahPerempuan, less20, over20;
     C = first(listC);
@@ -254,6 +231,24 @@ void tampilSemuaCalon(listWarga listW, listCalon listC) {
         cout << "Jumlah pemilih yang berumur > 20 : " << over20 << endl << endl;
         C = nextCalon(C);
     }
-    cout<<endl<<endl;
+}
+
+void tampilSemuaWarga(listWarga listW) {
+    adrWarga W = first(listW);
+    if (W == nil) {
+        cout << "Data warga masih kosong" << endl << endl;
+    } else {
+        while (nextWarga(W) != first(listW)) {
+            cout << "NIK : " << info(W).NIK << endl;
+            cout << "Nama : " << info(W).namaWarga << endl;
+            cout << "Umur : " << info(W).umur << endl;
+            cout << "Jenis Kelamin : " << (info(W).jenisKelamin ? "Laki-Laki" : "Perempuan")<< endl << endl;
+            W = nextWarga(W);
+        }
+        cout << "NIK : " << info(W).NIK << endl;
+        cout << "Nama : " << info(W).namaWarga << endl;
+        cout << "Umur : " << info(W).umur << endl;
+        cout << "Jenis Kelamin : " << (info(W).jenisKelamin ? "Laki-Laki" : "Perempuan")<< endl << endl;
+    }
 }
 
