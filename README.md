@@ -15,9 +15,26 @@ Program kita mengelola multi linked-list yang memodelkan relasi calon kepala des
 
 ![Frame 2 (1)](https://user-images.githubusercontent.com/35615666/146569338-65f5ccdc-d671-4154-a068-92580273a97c.jpg)
 
+## Feature Program
+1. Login Admin
+2. Menu Admin
+3. Menu Warga
+4. Input data melalui file .txt
+5. LogOut
 
+
+### Menu Admin
+Berikut tampilan pada menu admin :
+
+![menu admin](https://user-images.githubusercontent.com/35615666/149661378-7084030c-14ba-4a4f-a5ff-f59193c51368.png)
+
+### Menu Warga
+Berikut tampilan pada menu warga :
+
+![menu warga](https://user-images.githubusercontent.com/35615666/149661423-5e53a80b-6a5e-4cbb-897c-24437b786dcf.png)
+
+***
 
 ## Contact
-
 alifbabrizq@gmail.com
 aryyawijaya@gmail.com
