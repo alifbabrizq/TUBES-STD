@@ -1,5 +1,9 @@
 #include "calon.h"
-
+/*
+Kelompok 7 :
+  1. Alif Babrizq Kuncara (1301204228)
+  2. Aryya Bagus Padmanawijaya (1301204310)
+*/
 void createListCalon(listCalon &listC) {
     first(listC) = nil;
 }
@@ -48,22 +52,30 @@ void hapusCalon(listCalon &listC, int nomorCalon) {
 adrCalon cariCalon(listCalon listC, string namaCalon) {
     adrCalon C;
     C = first(listC);
-    while (nextCalon(C) != nil && info(C).namaCalon != namaCalon) {
-        C = nextCalon(C);
-    }
-    if (info(C).namaCalon == namaCalon) {
-        return C;
+    if (C != nil) {
+        while (nextCalon(C) != nil && info(C).namaCalon != namaCalon) {
+            C = nextCalon(C);
+        }
+        if (info(C).namaCalon == namaCalon) {
+            return C;
+        } else {
+            return nil;
+        }
     } else {
         return nil;
     }
 }
 
-void tampilkanCalon(listCalon listC) {
+void tampilSemuaCalon(listCalon listC) {
     adrCalon C = first(listC);
-    cout << "      DAFTAR  CALON      "<<endl;
-    while(C != nil) {
-        templateTampilCalon(C);
-        C = nextCalon(C);
+    if (C == nil) {
+        cout << "Data calon masih kosong" << endl << endl;
+    } else {
+        cout << "      DAFTAR  CALON      "<<endl;
+        while(C != nil) {
+            templateTampilCalon(C);
+            C = nextCalon(C);
+        }
     }
 }
 

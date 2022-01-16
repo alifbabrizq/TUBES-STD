@@ -1,5 +1,9 @@
 #include "menu.h"
-
+/*
+Kelompok 7 :
+  1. Alif Babrizq Kuncara (1301204228)
+  2. Aryya Bagus Padmanawijaya (1301204310)
+*/
 void selectMenu(listCalon &listC, listWarga &listW) {
     string user;
     cout << "\nAnda Siapa ?(admin/warga) : ";
@@ -28,7 +32,6 @@ void selectMenuAdmin(listCalon &listC, listWarga &listW) {
         cin >> pilihMenu;
         while (pilihMenu != 0) {
             if (pilihMenu == 1) {
-                createListCalon(listC);
                 adrCalon C;
                 dataCalon dataC;
                 string s;
@@ -65,19 +68,20 @@ void selectMenuAdmin(listCalon &listC, listWarga &listW) {
                     createElmCalon(dataC, C);
                     tambahCalon(listC, C);
                 }
-                cout << "Data calon telah berhasil ditambahkan!!" << endl << endl;
+                cout << "Data calon telah berhasil ditambahkan!!" << endl;
+                tampilSemuaCalon(listC);
             } else if (pilihMenu == 2) {
                 int nomorCalon;
                 cout << "Masukkan nomor calon yang ingin dihapus : ";
                 cin >> nomorCalon;
                 hapusCalon(listC, nomorCalon);
+                cout << "Data calon sekarang : " << endl;
+                tampilSemuaCalon(listC);
             } else if (pilihMenu == 3) {
-                createListWarga(listW);
                 adrWarga W;
                 dataWarga dataW;
                 string s;
 
-                // test file input
                 ifstream file;
                 file.open("inputDataWarga.txt");
 
@@ -114,12 +118,15 @@ void selectMenuAdmin(listCalon &listC, listWarga &listW) {
                     createElmWarga(dataW, W);
                     tambahWarga(listW, W);
                 }
-                cout << "Data warga telah berhasil ditambahkan!!" << endl << endl;
+                cout << "Data warga telah berhasil ditambahkan!!" << endl;
+                tampilSemuaWarga(listW);
             } else if (pilihMenu == 4) {
                 string noInduk;
                 cout << "Masukkan NIK yang ingin dihapus : ";
                 cin >> noInduk;
                 hapusWarga(listW, noInduk);
+                cout << "Data warga sekarang : " << endl;
+                tampilSemuaWarga(listW);
             } else if (pilihMenu == 5) {
                 pemlihTermudaTertua(listW);
             } else if (pilihMenu == 6) {
@@ -145,7 +152,7 @@ void selectMenuAdmin(listCalon &listC, listWarga &listW) {
                     cout << "Calon tidak ditemukan " << endl << endl;
                 }
             } else if (pilihMenu == 8) {
-                tampilSemuaCalon(listW, listC);
+                tampilSemuaCalonDenganStatistik(listW, listC);
             } else if (pilihMenu == 9) {
                 selectMenu(listC, listW);
             } else {
@@ -181,7 +188,7 @@ void selectMenuWarga(listCalon &listC, listWarga &listW) {
             cin >> noInduk;
             W = cekNikWarga(listW, noInduk);
             if (W != nil) {
-                tampilkanCalon(listC);
+                tampilSemuaCalon(listC);
                 cout << "Masukkan nama calon yang di pilih : ";
                 cin.ignore();
                 getline(cin, namaPilihan);
@@ -211,11 +218,15 @@ void selectMenuWarga(listCalon &listC, listWarga &listW) {
                 cout << "Calon tidak ditemukan " << endl << endl;
             }
         } else if (pilihMenu == 4){
-            tampilSemuaCalon(listW, listC);
+            tampilSemuaCalonDenganStatistik(listW, listC);
         } else if (pilihMenu == 5){
             adrCalon cWin;
             cWin = suaraTerbanyak(listW, listC);
-            templateTampilCalon(cWin);
+            if (cWin != nil) {
+                templateTampilCalon(cWin);
+            } else {
+                cout << "Belum ada warga yang melakukan pemilihan" << endl << endl;
+            }
         } else if (pilihMenu == 9) {
                 selectMenu(listC, listW);
         } else {

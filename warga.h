@@ -71,7 +71,7 @@ void hitungUmurPemilihCalon(listWarga listW, listCalon listC, int &less20, int &
   F.S. less20 telah menyimpan banyaknya pemilih berumur <= 20 dan
        over20 telah menyimpan banyaknya pemilih berumur > 20 yang memilih calon dengan nama namaCalon }
 */
-void tampilSemuaCalon(listWarga listW, listCalon listC);
+void tampilSemuaCalonDenganStatistik(listWarga listW, listCalon listC);
 /*
 { I.S. listW mungkin kosong.
   F.S. menampilkan namaCalon, jumlah pemilih dengan gender laki-laki dan jumlah pemilih dengan gender perempuan, dan
@@ -102,7 +102,10 @@ void pemilihan(listWarga &listW, adrCalon C, adrWarga W);
 { I.S. listW tidak kosong, W menyimpan address warga yang melilih, dan C menyimpan addres calon yang dipilih
   F.S. pilihan W menunjuk C }
 */
-// void pilihCalon(listWarga &listW, adrWarga &pW, listCalon listC, string NIK, int noCalon);
-// void cetakBelumMilih(listWarga listW);
+void tampilSemuaWarga(listWarga listW);
+/*
+{ I.S. listW mungkin kosong,
+  F.S. menampilkan semua warga}
+*/
 
 #endif // WARGA_H_INCLUDED

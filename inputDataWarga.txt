@@ -1,3 +1,7 @@
 3404011,Susanto Hudoro,1,45
-3404434,Athalah Hahaha,1,20
-3401219,Astaga Dragon,0,14
+3404722,Wati Mega,0,25
+3404053,Athalah Hahaha,1,20
+3404733,Dalang Ranggi,1,60
+3404682,Astaga Dragon,0,14
+3404123,Sukijah Markonah,0,59
+3404623,Upin Ipin,1,15
